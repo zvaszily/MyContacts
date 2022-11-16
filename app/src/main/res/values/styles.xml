@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ContactNameTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ContactEmailTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ContactAddressTextStyle" parent="ContactEmailTextStyle">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+</resources>

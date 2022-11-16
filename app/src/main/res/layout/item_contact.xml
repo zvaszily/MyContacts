@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/contact_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/ContactNameTextStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/contact_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@tools:sample/full_names"/>
+
+    <TextView
+        android:id="@+id/contact_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/ContactEmailTextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/contact_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/contact_name"
+        app:layout_constraintTop_toBottomOf="@id/contact_name"
+        tools:text="@tools:sample/us_phones" />
+
+    <TextView
+        android:id="@+id/contact_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/ContactAddressTextStyle"
+        app:layout_constraintBottom_toBottomOf="@id/contact_image"
+        app:layout_constraintStart_toStartOf="@id/contact_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@tools:sample/cities"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
