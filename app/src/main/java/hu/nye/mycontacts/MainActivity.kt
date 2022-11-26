@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.contact_list_toolbar))
         val actionbar: ActionBar? = supportActionBar
         actionbar?.apply {
-            title = getString(R.string.codeyard)
+            title = getString(R.string.app_name)
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_menu)
 
