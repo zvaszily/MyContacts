@@ -16,7 +16,22 @@
 
     <style name="ActionBarTitleText" parent="TextAppearance.AppCompat">
         <item name="titleTextColor">@color/white</item>
-    </style>    
+    </style>
 
+    <style name="ContactDataTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ContactDataTypeTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TranslucentStatusTheme" parent="Widget.AppCompat.Toolbar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
     
 </resources>

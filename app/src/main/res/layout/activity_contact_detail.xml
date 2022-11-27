@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.45"/>
 
 
     <ImageView
         android:id="@+id/detail_header_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/detail_center_guide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -26,9 +27,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detail_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/detail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="34sp"
+        android:textColor="@color/white"
+        android:text="Popi"
+        tools:text="@tools:sample/lorem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_header_image"/>
+
+
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardCornerRadius="2dp"
         app:cardElevation="6dp"
@@ -43,6 +71,9 @@
 
             <ImageView
                 android:id="@+id/detail_dial_button"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -57,7 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="+36 30 63355555"
+                tools:text="@tools:sample/us_phones"
+                android:textAppearance="@style/ContactDataTextStyle"
                 app:layout_constraintBottom_toTopOf="@id/detail_phone_number_type_first"
                 app:layout_constraintStart_toEndOf="@id/detail_dial_button"
                 app:layout_constraintTop_toTopOf="@+id/detail_dial_button" />
@@ -66,14 +98,18 @@
                 android:id="@+id/detail_phone_number_type_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="hommm"
+                android:layout_marginTop="2dp"
+                tools:text="@tools:sample/lorem"
+                android:textAppearance="@style/ContactDataTypeTextStyle"
                 app:layout_constraintBottom_toBottomOf="@+id/detail_dial_button"
                 app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
                 app:layout_constraintTop_toBottomOf="@id/detail_phone_number_first" />
 
             <ImageView
                 android:id="@+id/detail_message_button_first"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -84,9 +120,13 @@
 
             <TextView
                 android:id="@+id/detail_phone_number_second"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+36 30 63355555"
+                tools:text="@tools:sample/us_phones"
+                android:textAppearance="@style/ContactDataTextStyle"
                 app:layout_constraintBottom_toTopOf="@id/detail_phone_number_type_second"
                 app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
                 app:layout_constraintTop_toTopOf="@+id/detail_message_button_second"/>
@@ -95,27 +135,41 @@
                 android:id="@+id/detail_phone_number_type_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="hommm"
+                android:layout_marginTop="2dp"
+                tools:text="@tools:sample/lorem"
+                android:textAppearance="@style/ContactDataTypeTextStyle"
                 app:layout_constraintBottom_toBottomOf="@+id/detail_message_button_second"
                 app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
                 app:layout_constraintTop_toBottomOf="@id/detail_phone_number_second"/>
 
             <ImageView
                 android:id="@+id/detail_message_button_second"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="48dp"
                 android:src="@drawable/ic_message"
                 app:layout_constraintEnd_toEndOf="@id/detail_message_button_first"
                 app:layout_constraintTop_toBottomOf="@id/detail_message_button_first"
                 app:tint="@color/colorIconTint" />
+            
+            <View
+                android:id="@+id/detail_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_phone_number_type_second"
+                app:layout_constraintBottom_toTopOf="@id/detail_email"/>
 
             <ImageView
                 android:id="@+id/detail_email_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="48dp"
                 android:src="@drawable/ic_email"
                 app:layout_constraintStart_toStartOf="@id/detail_dial_button"
                 app:layout_constraintTop_toBottomOf="@id/detail_message_button_second"
@@ -125,7 +179,8 @@
                 android:id="@+id/detail_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+email@ĐĐĐ[[][][]"
+                tools:text="@tools:sample/us_phones"
+                android:textAppearance="@style/ContactDataTextStyle"
                 app:layout_constraintBottom_toTopOf="@id/detail_phone_email_type"
                 app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
                 app:layout_constraintTop_toTopOf="@+id/detail_email_button"/>
@@ -134,11 +189,20 @@
                 android:id="@+id/detail_phone_email_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="hommm"
+                android:layout_marginTop="2dp"
+                tools:text="@tools:sample/lorem"
+                android:textAppearance="@style/ContactDataTypeTextStyle"
                 app:layout_constraintBottom_toBottomOf="@+id/detail_email_button"
                 app:layout_constraintStart_toStartOf="@id/detail_phone_number_first"
                 app:layout_constraintTop_toBottomOf="@id/detail_email"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_phone_email_type"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
