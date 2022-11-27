@@ -7,9 +7,9 @@ class DataSource {
 
     fun loadUser(): List<User> {
         return listOf<User>(
-            User("Test Elek", "test@elek", "test address", R.drawable.poodle),
-            User("Test2 Elek", "test2@elek", "test address", R.drawable.pup),
-            User("Test3 Elek", "test3@elek", "test address", R.drawable.pug)
+            User("Test Elek", "test@elek", "test address", "@/drawable/pup"),
+            User("Test2 Elek", "test2@elek", "test address", "@/drawable/pup"),
+            User("Test3 Elek", "test3@elek", "test address", "@/drawable/pup")
         )
     }
 }
