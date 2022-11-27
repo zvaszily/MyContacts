@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,10 +45,25 @@ class MainActivity : AppCompatActivity() {
             .subscribe({ users ->
             Log.d("users arrived", "list size is ${users.size} ")
             usersData.adapter = ItemAdapter(this, users)
+            swapVisibility(users,usersData)
         },{
             it.printStackTrace()
             Log.e("user request error ", "onStart: ${it.message} ", )
         })
+
+
+    }
+
+    private fun swapVisibility(users: List<User>?, usersData: RecyclerView) {
+        val contactEmptyView: TextView = findViewById(R.id.contacts_empty_view)
+
+            if (users.isNullOrEmpty()) {
+                contactEmptyView.visibility = View.VISIBLE
+                usersData.visibility = View.GONE
+            } else {
+                contactEmptyView.visibility = View.GONE
+                usersData.visibility = View.VISIBLE
+            }
 
 
     }
