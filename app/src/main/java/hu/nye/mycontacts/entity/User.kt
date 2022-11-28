@@ -1,12 +1,14 @@
 package hu.nye.mycontacts.entity
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class User(
-    @StringRes val nameId: String,
-    @StringRes val emailId: String,
-    @StringRes val addressId: String,
-    @DrawableRes val imageUrlId: String
-                ){
-}
+    val nameId: String,
+    val emailId: String,
+    val workPhoneNumber: String,
+    val privatePhoneNumber: String,
+    val addressId: String,
+    val imageUrlId: String
+    ) : Parcelable

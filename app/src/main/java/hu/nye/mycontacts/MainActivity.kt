@@ -10,10 +10,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hu.nye.mycontacts.adapter.ItemAdapter
-import hu.nye.mycontacts.data.DataSource
 import hu.nye.mycontacts.entity.User
 import hu.nye.mycontacts.network.controller.UserController
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +37,8 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val usersData: RecyclerView = findViewById(R.id.contact_list)
-        val myDataset = DataSource().loadUser()
         usersData.layoutManager = LinearLayoutManager(this)
-        UserController().getUsers(30)
+        UserController().getUsers(15)
             .subscribe({ users ->
             Log.d("users arrived", "list size is ${users.size} ")
             usersData.adapter = ItemAdapter(this, users)

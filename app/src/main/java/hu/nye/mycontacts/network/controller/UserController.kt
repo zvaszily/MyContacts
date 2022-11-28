@@ -25,7 +25,10 @@ class UserController {
                         nameId = "${userResponse.name.title} ${userResponse.name.first} ${userResponse.name.last}",
                         emailId = userResponse.email,
                         addressId = userResponse.location.city,
-                        imageUrlId = userResponse.picture.large
+                        imageUrlId = userResponse.picture.large,
+                        privatePhoneNumber = userResponse.phone,
+                        workPhoneNumber = userResponse.cell
+
                     )
                 }
 
