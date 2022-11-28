@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .subscribe({ users ->
             Log.d("users arrived", "list size is ${users.size} ")
             usersData.adapter = ItemAdapter(this, users)
-            swapVisibititi(users,usersData)
+            swapVisibility(users,usersData)
         },{
             it.printStackTrace()
             Log.e("user request error ", "onStart: ${it.message} ", )
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun swapVisibititi(users: List<User>?, usersData: RecyclerView) {
+    private fun swapVisibility(users: List<User>?, usersData: RecyclerView) {
         val contactEmptyView: TextView = findViewById(R.id.contacts_empty_view)
 
             if (users.isNullOrEmpty()) {
